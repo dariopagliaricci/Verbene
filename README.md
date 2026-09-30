@@ -20,11 +20,15 @@ Verbene is currently in **beta**. Beta builds are marked *Pre-release*.
    ```bash
    shasum -a 256 ~/Downloads/Verbene-*.dmg
    ```
-3. Open the DMG and drag **Verbene** onto **Applications**. Always run Verbene from Applications, not from the DMG.
-4. Open Verbene. macOS says it cannot verify the developer. Click **Done** (not Move to Trash).
-5. Open **System Settings → Privacy & Security**, scroll down, click **Open Anyway** next to the Verbene message, and authenticate. Verbene now opens.
+3. Open the DMG and drag **Verbene** onto **Applications**. **Don't open Verbene yet.**
+4. Open **Terminal** and run this command. It removes the "downloaded from the internet" tag, so macOS doesn't hold the app for a security check that beta builds can't pass:
+   ```bash
+   xattr -dr com.apple.quarantine /Applications/Verbene.app
+   ```
+   If Terminal prints `Operation not permitted`, allow Terminal to modify apps: **System Settings → Privacy & Security → App Management**, turn **Terminal** on, quit and reopen Terminal, and run the command again.
+5. Open Verbene from Applications.
 
-During the beta, builds are signed but not yet notarized by Apple, which is why step 5 is needed. It approves only Verbene; Gatekeeper stays on for everything else.
+During the beta, builds are signed but not yet notarized by Apple, which is why step 4 is needed. Only do it for a DMG downloaded from this page whose checksum matches.
 
 ### Optional: full process coverage
 
@@ -38,7 +42,7 @@ This installs a small helper that runs as an administrator and only reads proces
 
 ## Update
 
-Quit Verbene, drag the new version over the old one in Applications, and do the **Open Anyway** step again (it is needed for every new build). If *Full process coverage* then shows *Waiting for approval*, switch Verbene on again in Login Items & Extensions.
+Quit Verbene, drag the new version over the old one in Applications, and run the `xattr` command from step 4 again before opening it (it is needed for every new build). If *Full process coverage* then shows *Waiting for approval*, switch Verbene on again in Login Items & Extensions.
 
 ## Uninstall
 
@@ -46,6 +50,13 @@ Quit Verbene, drag the new version over the old one in Applications, and do the 
 2. Quit Verbene and move it from Applications to the Trash.
 
 Deleting the app before turning the helper off leaves a stale entry in Login Items & Extensions, which you can remove there.
+
+## Troubleshooting
+
+**Verbene bounces in the Dock and never opens.** macOS is holding it for a security check that doesn't finish.
+1. Force quit Verbene (⌥⌘⎋), or run `killall -9 Verbene` in Terminal.
+2. Restart the Mac. This clears the stuck check.
+3. Run the `xattr` command from step 4 of *Install*, then open Verbene.
 
 ## Report a bug or request a feature
 
