@@ -1,17 +1,21 @@
 # Verbene
 
-Verbene is a macOS app that shows what your Mac is doing (CPU, GPU, memory, disk, network, energy and temperatures, per process) and runs bounded stress tests of its hardware.
+**See what your Mac is doing, and whether it's behaving normally.**
 
-This repository hosts **beta builds and feedback only**. The source code is private.
+Verbene shows your Mac's activity live (CPU, GPU, memory, disk, network, energy and temperatures), down to each process. It also runs controlled stress tests of the hardware, with safety limits, so you can see how your Mac holds up under sustained load.
+
+Download Verbene from [Releases](../../releases). Report bugs and suggest features in [Issues](../../issues/new/choose).
 
 ## Requirements
 
 - A Mac with **Apple Silicon** (M1 or later). Intel Macs are not supported.
-- **macOS Sequoia 15** or newer. Tested on Sequoia 15, Tahoe 26 and Golden Gate 27.
+- **macOS Sequoia 15** or newer. Supported: Sequoia 15, Tahoe 26 and Golden Gate 27.
 
 ## Install
 
-1. Download the latest `Verbene-<version>.dmg` from [Releases](../../releases/latest).
+Verbene is currently in **beta**. Beta builds are marked *Pre-release*.
+
+1. Download the newest `Verbene-<version>.dmg` from [Releases](../../releases).
 2. Optional but recommended: check that the download is intact. In Terminal, run the command below and compare the result with the SHA-256 in the release notes.
    ```bash
    shasum -a 256 ~/Downloads/Verbene-*.dmg
@@ -20,7 +24,7 @@ This repository hosts **beta builds and feedback only**. The source code is priv
 4. Open Verbene. macOS says it cannot verify the developer. Click **Done** (not Move to Trash).
 5. Open **System Settings → Privacy & Security**, scroll down, click **Open Anyway** next to the Verbene message, and authenticate. Verbene now opens.
 
-Beta builds are signed but not notarized by Apple, which is why step 5 is needed. It approves only Verbene; Gatekeeper stays on for everything else.
+During the beta, builds are signed but not yet notarized by Apple, which is why step 5 is needed. It approves only Verbene; Gatekeeper stays on for everything else.
 
 ### Optional: full process coverage
 
