@@ -1,8 +1,8 @@
 # Verbene
 
-**See what your Mac is doing, and whether it's behaving normally.**
+**A living map of your Mac's components and the processes that drive them.**
 
-Verbene shows your Mac's activity live (CPU, GPU, memory, disk, network, energy and temperatures), down to each process. It also runs controlled stress tests of the hardware, with safety limits, so you can see how your Mac holds up under sustained load.
+Verbene brings your Mac's CPU, GPU, memory, disk, network, energy and temperatures together in one live, spatial view, and shows the processes behind each of them. It also includes controlled stress tests, with safety limits, to watch those components under sustained load.
 
 Download Verbene from [Releases](../../releases). Report bugs and suggest features in [Issues](../../issues/new/choose).
 
